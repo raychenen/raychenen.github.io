@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>COVID Foundation data issues</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="covid-foundation-data-issues_files/libs/clipboard/clipboard.min.js"></script>
+<script src="covid-foundation-data-issues_files/libs/quarto-html/quarto.js"></script>
+<script src="covid-foundation-data-issues_files/libs/quarto-html/popper.min.js"></script>
+<script src="covid-foundation-data-issues_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="covid-foundation-data-issues_files/libs/quarto-html/anchor.min.js"></script>
+<link href="covid-foundation-data-issues_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="covid-foundation-data-issues_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="covid-foundation-data-issues_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="covid-foundation-data-issues_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="covid-foundation-data-issues_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#子表格-香港大学数据查询-就是基本组织信息" id="toc-子表格-香港大学数据查询-就是基本组织信息" class="nav-link active" data-scroll-target="#子表格-香港大学数据查询-就是基本组织信息"><span class="toc-section-number">1</span>  子表格: 香港大学数据查询 (就是基本组织信息)</a></li>
+  <li><a href="#子表格-财务信息" id="toc-子表格-财务信息" class="nav-link" data-scroll-target="#子表格-财务信息"><span class="toc-section-number">2</span>  子表格: 财务信息</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">COVID Foundation data issues</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- # COVID Foundation data issues -->
+<p>以下所有结果都是基于<code>香港科技大学数据2022-12-12.xlsx</code>这个文件得到的。</p>
+<section id="子表格-香港大学数据查询-就是基本组织信息" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="子表格-香港大学数据查询-就是基本组织信息"><span class="header-section-number">1</span> 子表格: 香港大学数据查询 (就是基本组织信息)</h2>
+<p>机构类型、公募资格上没有数据问题。</p>
+<pre><code>Column: 机构类型
+Missing value count: 0
+Number of organizations with '0' in this column: 0
+Unique value count: 5
+Unique values: ['基金会' '红十字会' '慈善会' '社会团体' '社会服务机构']</code></pre>
+<pre><code>Column: 公募资格
+Missing value count: 0
+Number of organizations with '0' in this column: 0
+Unique value count: 2
+Unique values: ['是' '否']</code></pre>
+<p><code>员工人数</code>上，我们有两个疑问。第一，为什么会有机构的员工人数是0？第二，对于缺失值，员工人数是“未知”还是“0”？</p>
+<pre><code>Column: 员工人数
+Missing value count: 51
+Number of organizations with '0' in this column: 12
+Unique value count: 57
+Unique values: [ 97.  58.   5.   3.   7.   2.   4.  11.  10.   8.   6.  !没有填写!   0.  26.
+  41.   9.  23.  16.  18.  25.   1.  20.  15. 100.  50.  13.  21.  12.
+  39.  14.  19.  42.  22.  27.  17. 325.  30. 111.  31.  35.  45.  28.
+  61.  87.  36. 181.  49.  40.  84. 120.  83.  60.  78.  70.  93. 208.
+  43.  29.]</code></pre>
+<p><code>企业/家族基金会所属企业或个人</code>上，对于缺失值，隶属的企业是“未知”还是“没有隶属”？</p>
+<pre><code>Column: 企业/家族基金会所属企业或个人
+Missing value count: 550
+Number of organizations with '0' in this column: 0
+Unique value count: 18
+Unique values: [!没有填写! '百度（中国）有限公司' '德天下国际健康管理（北京）有限公司' '正荣集团有限公司' '广东丹姿集团有限公司' '碧桂园控股有限公司'
+ '三七互娱网络科技集团股份有限公司' '山东京博控股集团有限公司' '上海国乾投资管理有限公司' '上海全人生物科技有限公司'
+ '上海相宜本草化妆品股份有限公司' '上海云开教育培训有限公司' 'TCL科技集团股份有限公司' '深圳市天图创业投资有限公司' '陈一丹'
+ '花样年集团（中国）有限公司' '陈灵梅' '深圳市松禾创业投资有限公司' '杭州锦江集团有限公司']</code></pre>
+<p><code>评估等级</code>上，“!没有填写!” “无” “未知”有什么区别？更具体的说，“!没有填写!”应该被看作是”未知”还是看作”无”？</p>
+<pre><code>Column: 评估等级
+Missing value count: 226
+Number of organizations with '0' in this column: 0
+Unique value count: 8
+Unique values: ['5A' '4A' !没有填写! '3A' '2A' '未参加' '1A' '无' '未知']</code></pre>
+</section>
+<section id="子表格-财务信息" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="子表格-财务信息"><span class="header-section-number">2</span> 子表格: 财务信息</h2>
+<p>问题是一致的: 第一，为什么有基金会的钱是’0.0’(除了政府补助收入可以理解以外)？第二， “!没有填写!” 代表是的”未知”吗？还是”0.0”？第三，政府补助收入下，’!没有填写!’应该被视作没有政府收入，还是看作”未知”？</p>
+<pre><code>Column: 总资产合计
+Missing value count: 1
+Number of organizations with '0' in this column: 0
+Unique value count: 485
+Unique values: ['!没有填写!']
+
+Column: 净资产合计
+Missing value count: 10
+Number of organizations with '0' in this column: 3
+Unique value count: 474
+Unique values: ['0.0', '!没有填写!']
+
+Column: 收入合计
+Missing value count: 2
+Number of organizations with '0' in this column: 1
+Unique value count: 484
+Unique values: ['!没有填写!', '0.0']
+
+Column: 捐赠收入
+Missing value count: 2
+Number of organizations with '0' in this column: 12
+Unique value count: 473
+Unique values: ['!没有填写!', '0.0']
+
+Column: 政府补助收入
+Missing value count: 40
+Number of organizations with '0' in this column: 312
+Unique value count: 120
+Unique values: ['0.0', '!没有填写!'] &lt;-- 这里很重要</code></pre>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
